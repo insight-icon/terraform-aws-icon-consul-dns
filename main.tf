@@ -22,7 +22,7 @@ data "aws_instance" "consul_ec2_indiv_instance" {
 
 resource "aws_route53_record" "consul_servers" {
   allow_overwrite = true
-  name            = join(".", ["consul-srv", var.region, var.root_domain_name])
+  name            = join(".", ["consul-srv", var.region])
   ttl             = 30
   type            = "A"
   zone_id         = var.zone_id
